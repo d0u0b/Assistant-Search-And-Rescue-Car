@@ -26,9 +26,10 @@ Assistant Search & Rescue Car can search for survivors in small or collapsed bui
 
 ### Required Hardware
 - 1 Himax WE-1 Plus EVB
-- 1 two Wheels Smart Robot Car Chassis Kit
-- 1 L298N
 - 1 ESP32
+- 1 L298N
+- 1 MPU6050 Accelerometer and Gyroscope
+- 1 Two Wheels Smart Robot Car Chassis Kit
 - 2 Ultrasonic sensor
 - 2 Lithium rechargeable batteries
 
