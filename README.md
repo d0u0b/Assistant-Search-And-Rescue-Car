@@ -1,5 +1,6 @@
 # Assistant search & rescue car
-
+"Assistant Search & Rescue Car" is a combination of Himax WE-I Plus and ESP32.
+Using TensorFlow Lite for Microcontroller and sensors, It has functions of detecting terrain, detecting survivors, and calculating distance.
 
 ## Content
 - [Introduction](#introduction)
@@ -13,7 +14,7 @@
 - [DEMO](#demo)
 
 ## Introduction
-
+Assistant Search & Rescue Car can search for survivors in small or collapsed buildings for disaster rescuers.
 
 ### Function
 
