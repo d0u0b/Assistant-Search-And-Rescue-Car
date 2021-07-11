@@ -2,9 +2,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-const dgram = require('dgram')
-const server = dgram.createSocket('udp4')
-server.bind(5000)
+
 
 function createWindow() {
     // Create the browser window.
@@ -18,7 +16,7 @@ function createWindow() {
 
     // and load the index.html of the app.
     mainWindow.loadFile('index.html')
-
+    
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
 }

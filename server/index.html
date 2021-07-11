@@ -8,6 +8,10 @@
 		/>
 		<title>ASRC Server</title>
 		<link rel="stylesheet" href="./css/tailwind.min.css" />
+		<link rel="stylesheet" href="./css/sweetalert2.min.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<script src="./javascript/sweetalert2.min.js"></script>
+		<script src="./javascript/d3.min.js"></script>
 	</head>
 
 	<body>
@@ -64,7 +68,7 @@
 								<div class="text-md text-gray-500 font-black">
 									Direction
 								</div>
-								<div class="text-lg" id="direct">230k</div>
+								<div class="text-lg" id="direction">...</div>
 							</div>
 						</div>
 					</div>
@@ -178,7 +182,7 @@
 			</div>
 
 			<div class="w-full h-4/5 flex">
-				<div class="w-4/5 bg-blue-300">這裡放行走軌跡圖</div>
+				<div class="w-4/5" id="trajectory"></div>
 				<div class="w-1/5 bg-gray-100 flex flex-col items-center justify-evenly">
 					<div class="w-11/12">
 						<div
@@ -213,24 +217,24 @@
 									>
 										Accelerometer
 									</div>
-									<div class="text-lg">
+									<div class="text-lg max-w-full">
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［X］</span
 											>
-											<span id="acL">100</span>
+											<span class="val inline-block max-w-full text-right" id="acc-x">...</span>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Y］</span
 											>
-											<span id="acY">100</span>
+											<span class="val inline-block max-w-full text-right" id="acc-y">...</span>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Z］</span
 											>
-											<span id="acZ">100</span>
+											<span class="val inline-block max-w-full text-right" id="acc-z">...</span>
 										</div>
 									</div>
 								</div>
@@ -276,19 +280,19 @@
 											<span class="text-gray-400"
 												>［X］</span
 											>
-											<span id="grL">100</span>
+											<span class="val" id="gry-x">...</span>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Y］</span
 											>
-											<span id="grY">100</span>
+											<span class="val" id="gry-y">...</span>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Z］</span
 											>
-											<span id="grZ">100</span>
+											<span class="val" id="gry-z">...</span>
 										</div>
 									</div>
 								</div>
@@ -298,6 +302,7 @@
 				</div>
 			</div>
 		</div>
+		<script src="./javascript/trajectory-graph.js"></script>
 		<script src="./renderer.js"></script>
 	</body>
 </html>

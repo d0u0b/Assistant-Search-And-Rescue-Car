@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("../fonts/JetBrainsMono-Regular.ttf");
+}
+
+.val {
+    font-family: JetBrainsMono;
+}
+
+.bg-orange-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(249,115,22,var(--tw-bg-opacity));
+}
+
+.bg-orange-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(254,215,170,var(--tw-bg-opacity));
+}
+
+.text-orange-600 {
+    --tw-text-opacity: 1;
+    color: rgba(234,88,12,var(--tw-text-opacity));
+}
+
+#progress-bar {
+    transition: width .3s;
+}
