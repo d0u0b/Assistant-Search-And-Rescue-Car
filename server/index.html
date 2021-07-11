@@ -8,182 +8,254 @@
 		/>
 		<title>ASRC Server</title>
 		<link rel="stylesheet" href="./css/tailwind.min.css" />
-		<link rel="stylesheet" href="./css/sweetalert2.min.css">
-		<link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" href="./css/sweetalert2.min.css" />
+		<link rel="stylesheet" href="./css/index.css" />
 		<script src="./javascript/sweetalert2.min.js"></script>
 		<script src="./javascript/d3.min.js"></script>
 	</head>
 
 	<body>
 		<div class="bg-gray-200 w-screen h-screen flex flex-col">
-			<div
-				class="
-					w-full
-					h-1/5
-					bg-gray-100
-					flex flex-row
-					items-center
-					justify-center
-					bg-gray-100
-					px-2
-				"
-			>
-				<div class="xl:w-1/4 w-1/3 mx-2">
-					<div
-						class="
-							widget
-							w-full
-							p-4
-							rounded-lg
-							bg-white
-							border-l-4 border-purple-400
-						"
-					>
-						<div class="flex items-center">
-							<div
-								class="
-									icon
-									w-14
-									p-3.5
-									bg-purple-400
-									text-white
-									rounded-full
-									mr-3
-								"
-							>
-								<svg
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
+			<div class="w-full h-1/5 bg-gray-100 flex flex-row px-2">
+				<div class="w-4/5 flex flex-row justify-center items-center">
+					<div class="w-1/3 mx-2">
+						<div
+							class="
+								widget
+								w-full
+								p-4
+								rounded-lg
+								bg-white
+								border-l-4 border-purple-400
+							"
+						>
+							<div class="flex items-center">
+								<div
+									class="
+										icon
+										w-14
+										p-3.5
+										bg-purple-400
+										text-white
+										rounded-full
+										mr-3
+									"
 								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-									></path>
-								</svg>
-							</div>
-							<div class="flex flex-col justify-center">
-								<div class="text-md text-gray-500 font-black">
-									Direction
+									<svg
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+										></path>
+									</svg>
 								</div>
-								<div class="text-lg" id="direction">...</div>
+								<div class="flex flex-col justify-center">
+									<div
+										class="text-md text-gray-500 font-black"
+									>
+										Direction
+									</div>
+									<div class="text-lg" id="direction">
+										...
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="w-1/3 mx-2">
+						<div
+							class="
+								widget
+								w-full
+								p-4
+								rounded-lg
+								bg-white
+								border-l-4 border-blue-400
+							"
+						>
+							<div class="flex items-center">
+								<div
+									class="
+										icon
+										w-14
+										p-3.5
+										bg-blue-400
+										text-white
+										rounded-full
+										mr-3
+									"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z"
+										/>
+									</svg>
+								</div>
+								<div class="flex flex-col justify-center">
+									<div
+										class="text-md text-gray-500 font-black"
+									>
+										Ultrasonic
+									</div>
+									<div class="text-lg">
+										<span class="text-gray-400">［L］</span>
+										<span id="ultrasonicL">100</span>
+										<span class="text-gray-400 ml-2"
+											>［R］</span
+										>
+										<span id="ultrasonicR">100</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="w-1/3 mx-2">
+						<div
+							class="
+								widget
+								w-full
+								p-4
+								rounded-lg
+								bg-white
+								border-l-4 border-green-400
+							"
+						>
+							<div class="flex items-center">
+								<div
+									class="
+										icon
+										w-14
+										p-3.5
+										bg-green-400
+										text-white
+										rounded-full
+										mr-3
+									"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+								</div>
+								<div class="flex flex-col justify-center">
+									<div
+										class="text-md text-gray-500 font-black"
+									>
+										Motor
+									</div>
+									<div class="text-lg">
+										<span class="text-gray-400">［L］</span>
+										<span id="motorL">100</span>
+										<span class="text-gray-400 ml-2"
+											>［R］</span
+										>
+										<span id="motorR">100</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="xl:w-1/4 w-1/3 mx-2">
-					<div
-						class="
-							widget
-							w-full
-							p-4
-							rounded-lg
-							bg-white
-							border-l-4 border-blue-400
-						"
-					>
-						<div class="flex items-center">
-							<div
-								class="
-									icon
-									w-14
-									p-3.5
-									bg-blue-400
-									text-white
-									rounded-full
-									mr-3
-								"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z"
-									/>
-								</svg>
-							</div>
-							<div class="flex flex-col justify-center">
-								<div class="text-md text-gray-500 font-black">
-									Ultrasonic
-								</div>
-								<div class="text-lg">
-									<span class="text-gray-400">［L］</span>
-									<span id="ultrasonicL">100</span>
-									<span class="text-gray-400 ml-2"
-										>［R］</span
-									>
-									<span id="ultrasonicR">100</span>
-								</div>
-							</div>
-						</div>
+				<div class="w-1/5 flex flex-col justify-center items-center">
+					<div class="m-2">
+						<button
+							class="
+								bg-green-500
+								hover:bg-green-700
+								text-white
+								font-bold
+								py-2
+								px-9
+								text-xl
+								rounded-full
+							"
+						>
+							Start
+						</button>
+						<button
+							class="
+								bg-red-500
+								hover:bg-red-700
+								text-white
+								font-bold
+								py-2
+								px-10
+								mx-2
+								text-xl
+								rounded-full
+							"
+						>
+							Stop
+						</button>
 					</div>
-				</div>
-
-				<div class="xl:w-1/4 w-1/3 mx-2">
-					<div
-						class="
-							widget
-							w-full
-							p-4
-							rounded-lg
-							bg-white
-							border-l-4 border-green-400
-						"
-					>
-						<div class="flex items-center">
-							<div
-								class="
-									icon
-									w-14
-									p-3.5
-									bg-green-400
-									text-white
-									rounded-full
-									mr-3
-								"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 20 20"
-									fill="currentColor"
-								>
-									<path
-										fill-rule="evenodd"
-										d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-										clip-rule="evenodd"
-									/>
-								</svg>
-							</div>
-							<div class="flex flex-col justify-center">
-								<div class="text-md text-gray-500 font-black">
-									Motor
-								</div>
-								<div class="text-lg">
-									<span class="text-gray-400">［L］</span>
-									<span id="motorL">100</span>
-									<span class="text-gray-400 ml-2"
-										>［R］</span
-									>
-									<span id="motorR">100</span>
-								</div>
-							</div>
-						</div>
+					<div class="m-2">
+						<button
+							class="
+								bg-blue-500
+								hover:bg-blue-700
+								text-white
+								font-bold
+								py-2
+								px-6
+								text-xl
+								rounded-full
+							"
+						>
+							Restart
+						</button>
+						<button
+							class="
+								bg-yellow-500
+								hover:bg-yellow-700
+								text-white
+								font-bold
+								py-2
+								px-4
+								ml-1
+								text-xl
+								rounded-full
+							"
+						>
+							Correction
+						</button>
 					</div>
 				</div>
 			</div>
 
 			<div class="w-full h-4/5 flex">
 				<div class="w-4/5" id="trajectory"></div>
-				<div class="w-1/5 bg-gray-100 flex flex-col items-center justify-evenly">
+				<div
+					class="
+						w-1/5
+						bg-gray-100
+						flex flex-col
+						items-center
+						justify-evenly
+					"
+				>
 					<div class="w-11/12">
 						<div
 							class="
@@ -207,9 +279,17 @@
 										mr-3
 									"
 								>
-								<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="currentColor">
-									<path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
-								  </svg>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+											clip-rule="evenodd"
+										/>
+									</svg>
 								</div>
 								<div class="flex flex-col justify-center">
 									<div
@@ -222,19 +302,46 @@
 											<span class="text-gray-400"
 												>［X］</span
 											>
-											<span class="val inline-block max-w-full text-right" id="acc-x">...</span>
+											<span
+												class="
+													val
+													inline-block
+													max-w-full
+													text-right
+												"
+												id="acc-x"
+												>...</span
+											>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Y］</span
 											>
-											<span class="val inline-block max-w-full text-right" id="acc-y">...</span>
+											<span
+												class="
+													val
+													inline-block
+													max-w-full
+													text-right
+												"
+												id="acc-y"
+												>...</span
+											>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Z］</span
 											>
-											<span class="val inline-block max-w-full text-right" id="acc-z">...</span>
+											<span
+												class="
+													val
+													inline-block
+													max-w-full
+													text-right
+												"
+												id="acc-z"
+												>...</span
+											>
 										</div>
 									</div>
 								</div>
@@ -265,9 +372,19 @@
 										mr-3
 									"
 								>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-								  </svg>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+										/>
+									</svg>
 								</div>
 								<div class="flex flex-col justify-center">
 									<div
@@ -280,19 +397,25 @@
 											<span class="text-gray-400"
 												>［X］</span
 											>
-											<span class="val" id="gry-x">...</span>
+											<span class="val" id="gry-x"
+												>...</span
+											>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Y］</span
 											>
-											<span class="val" id="gry-y">...</span>
+											<span class="val" id="gry-y"
+												>...</span
+											>
 										</div>
 										<div class="my-2">
 											<span class="text-gray-400"
 												>［Z］</span
 											>
-											<span class="val" id="gry-z">...</span>
+											<span class="val" id="gry-z"
+												>...</span
+											>
 										</div>
 									</div>
 								</div>
