@@ -1,10 +1,9 @@
 # Assistant Search & Rescue Car
-"Assistant Search & Rescue Car" is a combination of Himax WE-I Plus and ESP32.
+"Assistant Search & Rescue Car" is a combination of Himax WE-I Plus EVB and ESP32.
 Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions detecting terrain, detecting survivors, and calculating distance.
 
 ## 📝 Table of Contents
 - [Introduction](#introduction)
-  - [Function](#function)
   - [System Architecture](#system-architecture)
 - [Hardware and Software Setup](#hardware-and-software-setup)
   - [Required Hardware](#required-hardware)
@@ -17,16 +16,13 @@ Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions d
 ## 📖 Introduction
 Assistant Search & Rescue Car can search for survivors in small or collapsed buildings for disaster rescuers.
 
-### 💡 Function
-
-
 ### 🛠️ System Architecture
 
 
 ## 🧰 Hardware and Software Setup
 
 ### ⚙️ Required Hardware
-- 1 Himax WE-1 Plus EVB
+- 1 Himax WE-I Plus EVB
 - 1 ESP32
 - 1 L298N
 - 1 MPU6050 Accelerometer and Gyroscope
@@ -38,6 +34,7 @@ Assistant Search & Rescue Car can search for survivors in small or collapsed bui
 - Python 3.8
 
 ### ⛓️ Hardware Connection
+![](https://i.imgur.com/QYPl87s.jpg)
 
 ## ✍️ Usage
 
