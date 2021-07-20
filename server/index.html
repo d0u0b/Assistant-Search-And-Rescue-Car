@@ -60,7 +60,7 @@
 									>
 										Direction
 									</div>
-									<div class="text-lg" id="direction">
+									<div class="text-lg" id="yaw">
 										...
 									</div>
 								</div>
@@ -113,11 +113,11 @@
 									</div>
 									<div class="text-lg">
 										<span class="text-gray-400">［L］</span>
-										<span id="ultrasonicL">100</span>
+										<span id="ultrasonicL">...</span>
 										<span class="text-gray-400 ml-2"
 											>［R］</span
 										>
-										<span id="ultrasonicR">100</span>
+										<span id="ultrasonicR">...</span>
 									</div>
 								</div>
 							</div>
@@ -182,6 +182,7 @@
 				<div class="w-1/5 flex flex-col justify-center items-center">
 					<div class="m-2">
 						<button
+							id="start-btn"
 							class="
 								bg-green-500
 								hover:bg-green-700
@@ -213,6 +214,7 @@
 					</div>
 					<div class="m-2">
 						<button
+							id="restart-btn"
 							class="
 								bg-blue-500
 								hover:bg-blue-700
