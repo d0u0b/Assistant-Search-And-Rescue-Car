@@ -41,7 +41,7 @@ Assistant Search & Rescue Car can search for survivors in small or collapsed bui
 |   Command Name   | Value | WE-I Plus | ESP-32 | Server |
 |:----------------:|:-----:|:---------:|:------:|:------:|
 | PERSON_DETECT    | 0x81  | ✔         | ✔      |        |
-| GET_ATTITUDE    | 0x82  |           | ✔      | ✔      |
+| GET_ATTITUDE     | 0x82  |           | ✔      | ✔      |
 | GET_ULTRASONIC   | 0x83  |           | ✔      | ✔      |
 | GET_IP           | 0x91  |           | ✔      | ✔      |
 | PERSON_FINDED    | 0x92  |           | ✔      | ✔      |
