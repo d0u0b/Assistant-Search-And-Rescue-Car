@@ -39,8 +39,21 @@ Assistant Search & Rescue Car can search for survivors in small or collapsed bui
 
 ### ⛓️ Hardware Connection
 
+#### Hardware Command Table
+
+|   Command Name   | Value | WE-I Plus | ESP-32 | Server |
+|:----------------:|:-----:|:---------:|:------:|:------:|
+| PERSON_DETECT    | 0x81  | ✔         | ✔      |        |
+| GET_ATTITUDE    | 0x82  |           | ✔      | ✔      |
+| GET_ULTRASONIC   | 0x83  |           | ✔      | ✔      |
+| GET_IP           | 0x91  |           | ✔      | ✔      |
+| PERSON_FINDED    | 0x92  |           | ✔      | ✔      |
+| GET_IMG          | 0x93  | ✔         | ✔      | ✔      |
+| CONTINUE_FIND    | 0xA1  |           | ✔      | ✔      |
 ## ✍️ Usage
 
 ## 💻 DEMO
 
 ## 🙏 Acknowledgments
+
+make file的ROOT_PATH須更改
