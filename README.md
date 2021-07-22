@@ -4,7 +4,6 @@ Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions d
 
 ## 📝 Table of Contents
 - [Introduction](#introduction)
-  - [System Architecture](#system-architecture)
 - [Hardware and Software Setup](#hardware-and-software-setup)
   - [Required Hardware](#required-hardware)
   - [Required Software](#required-software)
@@ -15,8 +14,6 @@ Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions d
 
 ## 📖 Introduction
 Assistant Search & Rescue Car can search for survivors in small or collapsed buildings for disaster rescuers.
-
-### 🛠️ System Architecture
 
 
 ## 🧰 Hardware and Software Setup
