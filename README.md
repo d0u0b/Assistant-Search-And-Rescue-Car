@@ -2,7 +2,7 @@
 Assistant Search & Rescue Car (ASRC) can search for survivors in small or collapsed buildings for disaster rescuers.
 
 ## 📝 Table of Contents
-- [Introduction](#📖introduction)
+- [Introduction](#introduction)
   - [System Architecture](#🛠️system-architecture)
 - [Hardware and Software Setup](#🧰hardware-and-software-setup)
   - [Required Hardware](#👨‍required-hardware)
