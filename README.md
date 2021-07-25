@@ -9,7 +9,7 @@ Assistant Search & Rescue Car (ASRC) can search for survivors in small or collap
   - [Required Software](#-required-software)
   - [Hardware Connection](#-hardware-connection)
   - [Software Setup](#-software-setup)
-- [Usage](#-usage)
+- [Usage](#%EF%B8%8F-usage)
 - [DEMO](#-demo)
 
 ## 📖 Introduction
