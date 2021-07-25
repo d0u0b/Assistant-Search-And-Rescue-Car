@@ -12,7 +12,7 @@ Assistant Search & Rescue Car (ASRC) can search for survivors in small or collap
 - [Usage](#✍️usage)
 - [DEMO](#💻demo)
 
-## 📖Introduction
+## 📖 Introduction
 "Assistant Search & Rescue Car" is a combination of Himax WE-I Plus EVB and ESP32.
 Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions detecting obstacle, detecting survivors, and calculating distance.
 
