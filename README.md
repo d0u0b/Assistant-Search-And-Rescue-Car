@@ -3,27 +3,27 @@ Assistant Search & Rescue Car (ASRC) can search for survivors in small or collap
 
 ## 📝 Table of Contents
 - [Introduction](#-introduction)
-  - [System Architecture](#🛠️system-architecture)
-- [Hardware and Software Setup](#🧰hardware-and-software-setup)
-  - [Required Hardware](#👨‍required-hardware)
-  - [Required Software](#👨‍required-software)
-  - [Hardware Connection](#⛓️hardware-connection)
-  - [Software Setup](#⚙️software-setup)
-- [Usage](#✍️usage)
-- [DEMO](#💻demo)
+  - [System Architecture](#-system-architecture)
+- [Hardware and Software Setup](#-hardware-and-software-setup)
+  - [Required Hardware](#-required-hardware)
+  - [Required Software](#-required-software)
+  - [Hardware Connection](#-hardware-connection)
+  - [Software Setup](#-software-setup)
+- [Usage](#-usage)
+- [DEMO](#-demo)
 
 ## 📖 Introduction
 "Assistant Search & Rescue Car" is a combination of Himax WE-I Plus EVB and ESP32.
 Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions detecting obstacle, detecting survivors, and calculating distance.
 
 
-### 🛠️System Architecture
+### 🛠️ System Architecture
 ![image](https://user-images.githubusercontent.com/43933375/126891478-6ee90f6d-012f-4749-b60c-5cc852e481a6.png)
 
 
-## 🧰Hardware and Software Setup
+## 🧰 Hardware and Software Setup
 
-### 👨‍🔧Required Hardware
+### 👨‍🔧 Required Hardware
 - 1 Himax WE-I Plus EVB
 - 1 ESP32
 - 1 L298N
@@ -32,13 +32,13 @@ Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions d
 - 2 Ultrasonic sensor
 - 2 Lithium rechargeable batteries
 
-### 👨‍💻Required Software
+### 👨‍💻 Required Software
 - Python 3.8
 - Virtualenv
 - Arduino 1.8.13
 - NodeJs 12.22.1 (Optional)
 
-### ⛓️Hardware Connection
+### ⛓️ Hardware Connection
 ![image](https://user-images.githubusercontent.com/43933375/126891421-e636d7a5-ad17-45ee-bace-04df83d1da05.png)
 
 #### Hardware Command Table
@@ -53,7 +53,7 @@ Using TensorFlow Lite for Microcontroller (TFLM) and sensors, It has functions d
 | GET_IMG          | 0x93  | ✔         | ✔      | ✔      |
 | CONTINUE_FIND    | 0xA1  |           | ✔      | ✔      |
 
-### ⚙️Software Setup
+### ⚙️ Software Setup
 #### Step 1: Prepare environment.
 - Clone this project into `Synopsys_SDK/User_Project`.
 - Download `Arduino_librarys.zip` from Releases and extract into the Arduino library folder.
@@ -68,7 +68,7 @@ If you download the server application, you don't need to install dependency.
 - Open `./server` in command line.
 - Run `npm install` to install dependency.
 
-## ✍️Usage
+## ✍️ Usage
 ### Step 1: Open server application
 Use two methods to open the application.
 - Download application from releases and open `ASRC Server` file.
@@ -82,5 +82,5 @@ Press `啟動車子` button，ASRC will start looking for survivors.
 ASRC draws a route when walking, and avoids obstacles if it encounters obstacles.
 When ASRC detects the survivor, it will stop and take a photo, and then send it back to the server application to display the photo.
 
-## 💻DEMO
+## 💻 DEMO
 We will update the DEMO video after this contest. 🤗
