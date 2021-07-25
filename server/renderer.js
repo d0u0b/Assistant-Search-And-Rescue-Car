@@ -5,20 +5,13 @@
 // selectively enable features needed in the rendering
 
 // process.
-const PERSON_DETECTION = 0x81
-const ACC_GRY = 0x82
-const SEND_IMG = 0x83
-const GET_IP = 0x91
-const PERSON_FIND = 0x92
-const GET_IMG = 0x93
-const CONTINUE_FIND = 0x94
 
-const IMG_HEIGHT = 240
-const IMG_WIDTH = 320
+const IMG = api.getImageSize();
 
 window.onload = () => {
     const trajectory = trajectoryGraph(d3.select("#trajectory"))
-    
+    trajectory.rerender()
+    api.trajectoryRecall(trajectory)
 }
 
 const showAlert = () => {
@@ -52,15 +45,16 @@ api.findPersonRecall(showAlert)
 const showImage = imageData => {
     Swal.fire({
         html: `
-        <canvas width="${IMG_WIDTH}" height="${IMG_HEIGHT}" id="img-canvas" class="mx-auto"></canvas>
-        `
+        <canvas width="${IMG.WIDTH}" height="${IMG.HEIGHT}" id="img-canvas" class="mx-auto"></canvas>
+        `,
+        width: IMG.WIDTH + 60
     })
     window.canvas = document.getElementById("img-canvas")
     window.ctx = canvas.getContext("2d")
-    let img = ctx.createImageData(IMG_WIDTH, IMG_HEIGHT);
+    let img = ctx.createImageData(IMG.WIDTH, IMG.HEIGHT);
     let data = img.data
-    for(let i = 0; i < IMG_WIDTH * IMG_HEIGHT; i++) {
-        data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = imageData[i] ^ 128
+    for(let i = 0; i < IMG.WIDTH * IMG.HEIGHT; i++) {
+        data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = imageData[i]
         data[i * 4 + 3] = 255
     }
     ctx.putImageData(img, 0, 0)

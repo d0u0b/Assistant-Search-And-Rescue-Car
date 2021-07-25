@@ -2,16 +2,15 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-
-
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 1280,
-        height: 720,
+        // width: 1280,
+        // height: 720,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        fullscreen:true
     })
 
     // and load the index.html of the app.

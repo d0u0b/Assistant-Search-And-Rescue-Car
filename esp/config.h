@@ -27,42 +27,27 @@
 #define SERVER_PORT 5000
 
 //MPU6050 pin
-#define MPU6050_INT 35 
+#define MPU6050_INT 35
 
-//Command code
-// typedef enum __attribute__((packed))
-// {
-//   PERSON_DETECT = 0x81,
-//   ACC_GRY = 0x82,
-//   SEND_IMG = 0x83,
-//   GET_IP = 0x91,
-//   PERSON_FIND = 0x92,
-//   GET_IMG = 0x93,
-//   CONTINUE_FIND = 0x94
-// } CMD;
-
-typedef enum __attribute__((packed))
-{
-  PERSON_DETECT = 0x81,
-  GET_ATTITUDE = 0x82,
-  GET_ULTRASONIC = 0x83,
-  GET_IP = 0x91,
-  PERSON_FINDED = 0x92,
-  GET_IMG = 0x93,
-  CONTINUE_FIND = 0xA1,
-  STOP_FIND = 0xA2,
-  RESTART = 0xA3
+typedef enum __packed {
+	PERSON_DETECT = 0x81,
+	GET_ATTITUDE = 0x82,
+	GET_ULTRASONIC = 0x83,
+	GET_DOA = 0x84,
+	GET_MOTOR = 0x85,
+	GET_IP = 0x91,
+	PERSON_FINDED = 0x92,
+	GET_IMG = 0x93,
+	CONTINUE_FIND = 0xA1,
+	STOP_FIND = 0xA2,
+	RESTART = 0xA3
 } CMD;
 
-
-
-
 //esp32 state
-typedef enum __attribute__((packed))
-{
-  FINDING,
-  STANDBY,
-  TEST
+typedef enum __packed {
+	FINDING,
+	STANDBY,
+	TEST
 } STATE;
 
 //MPU6050 config

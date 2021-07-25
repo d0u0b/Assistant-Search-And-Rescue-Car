@@ -53,14 +53,6 @@ void _Server::sendCMD(CMD cmd)
   client.write((uint8_t)cmd);
 }
 
-// void _Server::sendData(CMD cmd, uint8_t data)
-// {
-//   Udp.beginPacket(serverIP, SERVER_PORT);
-//   Udp.write((uint8_t)cmd);
-//   Udp.write(data);
-//   Udp.endPacket();
-// }
-
 void _Server::sendData(uint8_t* data, uint len)
 {
   client.write(data, len);
@@ -68,9 +60,6 @@ void _Server::sendData(uint8_t* data, uint len)
 
 void _Server::flushQueue() {
   SendData buffer;
-  // while(uxQueueMessagesWaiting(sendEnqueue)) {
-    
-  // }
   while(xQueueReceive(sendQueue, &buffer, 0) == pdPASS) {
     sendData(buffer.data, buffer.len);
     free(buffer.data);

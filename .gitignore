@@ -1,5 +1,7 @@
 **/*.o
 *.elf
 *.img
+.env
 .vscode
-**/node_modules
+node_modules
+build

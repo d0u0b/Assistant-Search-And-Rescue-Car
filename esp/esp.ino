@@ -26,13 +26,13 @@ _Server server;
 Motor motor(ypr, gyro);
 HCSR04 hcLeft(triggerL, echoL);
 HCSR04 hcRight(triggerR, echoR);
-float leftDist, rightDist;
+float rightDist, leftDist;
 
 TaskHandle_t attitudeHandle, sendDataHandle;
 
 void getAttitudeTask(void *pvParameters)
 {
-  uint8_t attitudeSendBuffer[22]; // 4(time) + 6(accelrate) + 12(ypr)
+  uint8_t attitudeSendBuffer[28]; // 4(time) + 6(accelrate) + 12(ypr) + 6(gyroscope)
   while (1)
   {
     *(uint32_t *)attitudeSendBuffer = millis();
@@ -45,24 +45,27 @@ void getAttitudeTask(void *pvParameters)
       mpu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
       mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
       mpu.dmpGetGyro(gyro, fifoBuffer);
+      ypr[0] = ypr[0] * 180 / M_PI;
       // Serial.println(gyro[2]);
       memcpy(attitudeSendBuffer + 4, &aaWorld.x, 6);
       memcpy(attitudeSendBuffer + 10, ypr, 12);
-      server.sendEnqueue(GET_ATTITUDE, attitudeSendBuffer, 22);
+      memcpy(attitudeSendBuffer + 22, gyro, 6);
+      server.sendEnqueue(GET_ATTITUDE, attitudeSendBuffer, 28);
     }
+    server.flushQueue();
   }
 }
 
 // void sendDataTask(void *pvParameters) {
 //   while(1) {
-//     Serial.println("test");
 //     server.flushQueue();
+//     vTaskDelay(1);
 //   }
 // }
 
 void setup()
 {
-  Serial.begin(500000);
+  Serial.begin(115200);
 
   server.initial();
   connectInitial();
@@ -117,7 +120,7 @@ void setup()
   //   "sendDataTask",
   //   10000,
   //   NULL,
-  //   0,
+  //   10,
   //   &sendDataHandle);
 }
 uint8_t count;
@@ -180,14 +183,15 @@ void loop()
     }
     leftDist = hcLeft.dist();
     rightDist = hcRight.dist();
+    server.sendEnqueue(GET_ULTRASONIC, (uint8_t*)&leftDist, 8);
 
     if (count)
     {
       motor.correctYaw();
       if (!--count)
       {
-        // motor.turnRight();
-        motor.forward();
+        motor.turnRight();
+        // motor.forward();
       }
     }
     else
@@ -197,18 +201,19 @@ void loop()
         motor.back();
         count = 10;
       }
-      else if (leftDist < 30)
+      else if (leftDist < 40)
         motor.goRight();
-      else if (rightDist < 30)
+      else if (rightDist < 40)
         motor.goLeft();
       else
       {
         motor.forward();
         motor.correctYaw();
       }
+      server.sendEnqueue(GET_MOTOR, (uint8_t*)&(motor.motorLeft), 2);
     }
     break;
   }
-
-  server.flushQueue();
+  // vTaskDelay(1);
+  // server.flushQueue();
 }
